@@ -1,11 +1,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
   ssr: true,
+  modules: ['@nuxt/ui'],
+  css: ['~/assets/css/main.css'],
   app: {
     head: {
-      title: 'Klyre — Monitor your lead acquisition quality',
+      title: 'Klyre — Détectez les signaux qui impactent votre revenu',
       meta: [
-        { name: 'description', content: 'Klyre connects to Google Ads and HubSpot CRM to help marketing teams analyze cost-per-lead and campaign attribution.' },
+        { name: 'description', content: 'Klyre surveille l\'ensemble de votre acquisition et détecte les pertes de valeur avant qu\'elles n\'impactent votre pipeline et votre revenu.' },
       ],
       link: [
         {
@@ -24,7 +26,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap',
         },
       ],
     },

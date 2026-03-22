@@ -1,0 +1,208 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --font-archivo: "Archivo", sans-serif;
+
+  --color-primary-50: #FFF8F0;
+  --color-primary-100: #FEEDD8;
+  --color-primary-200: #FDD9B0;
+  --color-primary-300: #F5BC7A;
+  --color-primary-400: #E8A04C;
+  --color-primary-500: #E8873C;
+  --color-primary-600: #D4762F;
+  --color-primary-700: #B55E20;
+  --color-primary-800: #8C4818;
+  --color-primary-900: #6B3612;
+
+  --color-dark: #1A1A1A;
+  --color-figma-orange: #ff8c00;
+
+  --max-width-content: 1200px;
+}
+
+/* Bandeau info Figma : pill blanc + bordure légère + pastille dorée halo (Hero, Funnel disclaimer, …) */
+.klyre-info-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.klyre-glow-dot {
+  position: relative;
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.klyre-glow-dot__halo {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background-color: rgba(255, 184, 0, 0.25);
+  filter: blur(3px);
+}
+
+.klyre-glow-dot__core {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #ffb800;
+  box-shadow:
+    0 0 0 4px rgba(255, 184, 0, 0.14),
+    0 0 10px 2px rgba(255, 184, 0, 0.22);
+}
+
+/* CTAs — h ~52px ; primary = linéaire orange lisible (pas de zone quasi-blanche sous le texte) */
+.cta-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: var(--font-archivo);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.6;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    filter 150ms ease,
+    box-shadow 150ms ease,
+    color 150ms ease,
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.cta-primary {
+  color: #fff;
+  /* Figma screenshot : linéaire vertical, orange vif → pêche doré, pas de bordure */
+  background: linear-gradient(180deg, #ef903c 0%, #f9bc6a 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 14px 28px;
+}
+
+.cta-primary:hover {
+  filter: brightness(1.05);
+}
+
+.cta-primary:active {
+  transform: translateY(1px);
+  filter: brightness(0.97);
+}
+
+.cta-secondary {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #0a0a0a;
+  padding: 14px 28px;
+}
+
+.cta-secondary:hover {
+  background: #fafafa;
+  border-color: #d1d5db;
+}
+
+/* Hero / outline secondaire — texte accent, bordure orange douce */
+.cta-secondary-muted {
+  border: 1px solid rgba(255, 140, 0, 0.45);
+  color: var(--color-figma-orange);
+  background: #fff;
+  padding: 14px 28px;
+}
+
+.cta-secondary-muted:hover {
+  background: #fffbf0;
+  border-color: var(--color-figma-orange);
+}
+
+.cta-base.cta-nav {
+  border-radius: 8px;
+  font-size: 0.75rem;
+  padding: 8px 20px;
+}
+
+.cta-base:focus-visible {
+  outline: 2px solid rgba(255, 140, 0, 0.45);
+  outline-offset: 2px;
+}
+
+.hero-headline-figma {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+  color: #0a0a0a;
+  background: linear-gradient(180deg, #0a0a0a 0%, rgba(10, 10, 10, 0.82) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Section headers — Figma: Archivo Bold 44 / 48, -6%, gradient #0A0A0A */
+.section-heading-figma {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+  text-align: center;
+  color: #0a0a0a;
+  background: linear-gradient(180deg, #0a0a0a 0%, rgba(10, 10, 10, 0.82) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Problem block — Figma: 40 / 48, -6%, left */
+.section-heading-figma-left {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  font-size: clamp(26px, 4.5vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.06em;
+  text-align: left;
+  color: #0a0a0a;
+  background: linear-gradient(180deg, #0a0a0a 0%, rgba(10, 10, 10, 0.82) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Eyebrow: dot + uppercase label, Figma orange #FF8C00 */
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.section-eyebrow__dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: var(--color-figma-orange);
+}
+
+.section-eyebrow__label {
+  font-family: var(--font-archivo);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20.8px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--color-figma-orange);
+}

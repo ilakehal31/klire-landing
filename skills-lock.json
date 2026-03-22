@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "contributing": {
+      "source": "nuxt/ui",
+      "sourceType": "github",
+      "computedHash": "63e6efd90fa42364b589411b9d7d222558858ce34e3cbaa30caa20fcc46d7fb4"
+    },
+    "nuxt-ui": {
+      "source": "nuxt/ui",
+      "sourceType": "github",
+      "computedHash": "9b7ff4c14185b7205c04c7ef41969d7b5c01e59c85e6d64083a7f497bf90b8d7"
+    }
+  }
+}
