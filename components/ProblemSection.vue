@@ -41,7 +41,7 @@
 
           <!-- Change row -->
           <div class="flex items-center gap-2">
-            <span class="text-[14px] font-semibold text-[#ef4444]">-2.1 % <UIcon name="i-lucide-arrow-down-right" class="inline size-3.5 align-middle" /></span>
+            <span class="text-[14px] font-semibold text-[#ef4444] inline-flex items-center gap-0.5">-2.1 % <UIcon name="i-lucide-arrow-down" class="size-3.5 shrink-0" /></span>
             <span class="text-[12px] text-[#a3a3a3]">vs. 34.493 sur les 30 derniers jours</span>
           </div>
 
@@ -85,7 +85,7 @@
                 </div>
               </div>
               <p class="text-[22px] font-bold text-[#0a0a0a] tracking-[-0.44px] leading-[33px]">66.9%</p>
-              <span class="text-[12px] font-semibold text-[#ef4444]">-2.1 % <UIcon name="i-lucide-arrow-down-right" class="inline size-3.5 align-middle" /></span>
+              <span class="text-[12px] font-semibold text-[#ef4444] inline-flex items-center gap-0.5">-2.1 % <UIcon name="i-lucide-arrow-down" class="size-3 shrink-0" /></span>
               <span class="text-[10px] text-[#a3a3a3]">vs. 69% sur les 30 derniers jours</span>
               <div class="flex flex-col gap-1 mt-1">
                 <div class="bg-[#f0f0f0] rounded-[4px] h-2 overflow-visible relative">
@@ -103,7 +103,7 @@
                 <span class="w-[14px] h-[16px] rounded-[7px] border border-[#a3a3a3] text-[#a3a3a3] text-[9px] font-bold flex items-center justify-center">i</span>
               </div>
               <p class="text-[22px] font-bold text-[#0a0a0a] tracking-[-0.44px] leading-[33px]">41.2%</p>
-              <span class="text-[12px] font-semibold text-[#22c55e]">0.5 % <UIcon name="i-lucide-arrow-up-right" class="inline size-3.5 align-middle" /></span>
+              <span class="text-[12px] font-semibold text-[#22c55e] inline-flex items-center gap-0.5">0.5 % <UIcon name="i-lucide-arrow-up" class="size-3 shrink-0" /></span>
               <span class="text-[10px] text-[#a3a3a3]">vs. 40.7% sur les 30 derniers jours</span>
               <div class="flex flex-col gap-1 mt-1">
                 <div class="bg-[#f0f0f0] rounded-[4px] h-2 overflow-visible relative">
@@ -124,7 +124,7 @@
                 <span class="w-[14px] h-[16px] rounded-[7px] border border-[#a3a3a3] text-[#a3a3a3] text-[9px] font-bold flex items-center justify-center">i</span>
               </div>
               <p class="text-[22px] font-bold text-[#0a0a0a] tracking-[-0.44px] leading-[33px]">23.2%</p>
-              <span class="text-[12px] font-semibold text-[#22c55e]">0.5 % <UIcon name="i-lucide-arrow-up-right" class="inline size-3.5 align-middle" /></span>
+              <span class="text-[12px] font-semibold text-[#22c55e] inline-flex items-center gap-0.5">0.5 % <UIcon name="i-lucide-arrow-up" class="size-3 shrink-0" /></span>
               <span class="text-[10px] text-[#a3a3a3]">vs. 22.7% sur les 30 derniers jours</span>
               <div class="flex flex-col gap-1 mt-1">
                 <div class="bg-[#f0f0f0] rounded-[4px] h-2 overflow-visible relative">
@@ -142,7 +142,7 @@
                 <span class="w-[14px] h-[16px] rounded-[7px] border border-[#a3a3a3] text-[#a3a3a3] text-[9px] font-bold flex items-center justify-center">i</span>
               </div>
               <p class="text-[22px] font-bold text-[#0a0a0a] tracking-[-0.44px] leading-[33px]">8.4%</p>
-              <span class="text-[12px] font-semibold text-[#22c55e]">0.5 % <UIcon name="i-lucide-arrow-up-right" class="inline size-3.5 align-middle" /></span>
+              <span class="text-[12px] font-semibold text-[#22c55e] inline-flex items-center gap-0.5">0.5 % <UIcon name="i-lucide-arrow-up" class="size-3 shrink-0" /></span>
               <span class="text-[10px] text-[#a3a3a3]">vs. 7.9% sur les 30 derniers jours</span>
               <div class="flex flex-col gap-1 mt-1">
                 <div class="bg-[#f0f0f0] rounded-[4px] h-2 overflow-visible relative">

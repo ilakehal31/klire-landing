@@ -1,7 +1,8 @@
 <template>
   <header class="w-full pt-6 px-4 md:px-6 relative z-50">
     <nav
-      class="mx-auto flex items-center justify-between max-w-[1200px] rounded-2xl border border-[#e6e6e6] bg-white/95 backdrop-blur-[8px] shadow-[0px_2px_12px_0px_rgba(0,0,0,0.04)] px-4 py-3 md:px-[17px] md:py-[17px]"
+      class="mx-auto flex items-center justify-between max-w-[1200px] rounded-2xl border border-[#e6e6e6] bg-white/95 backdrop-blur-[8px] shadow-[0px_2px_12px_0px_rgba(0,0,0,0.04)] px-4 py-3 md:px-[17px] md:py-[17px] nav-animate"
+      :class="{ 'nav-visible': mounted }"
     >
       <!-- Left: Logo -->
       <a href="/" class="shrink-0">
@@ -81,7 +82,16 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const mounted = ref(false)
 const mobileOpen = ref(false)
+
+onMounted(() => {
+  requestAnimationFrame(() => {
+    mounted.value = true
+  })
+})
 
 const navLinks = [
   { label: "Cas d'usage", href: '#cas-usage' },
@@ -90,3 +100,17 @@ const navLinks = [
   { label: 'Fonctionnalités', href: '#fonctionnalites' },
 ]
 </script>
+
+<style scoped>
+.nav-animate {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-animate.nav-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>

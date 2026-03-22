@@ -3,7 +3,10 @@
     <div class="max-w-content mx-auto px-4 md:px-6 flex flex-col items-center">
 
       <!-- 1. Top banner pill: tight dot+text, thin NE arrow SVG, nested CTA -->
-      <div class="klyre-info-strip mx-auto max-w-fit py-2 pl-3 md:pl-4 pr-1.5 flex-wrap md:flex-nowrap gap-y-2">
+      <div
+        class="klyre-info-strip mx-auto max-w-fit py-2 pl-3 md:pl-4 pr-1.5 flex-wrap md:flex-nowrap gap-y-2 hero-animate hero-delay-1"
+        :class="{ 'hero-visible': mounted }"
+      >
         <span class="klyre-glow-dot" aria-hidden="true">
           <span class="klyre-glow-dot__halo"></span>
           <span class="klyre-glow-dot__core"></span>
@@ -21,18 +24,27 @@
       </div>
 
       <!-- 2. Main heading -->
-      <h1 class="hero-headline-figma mt-6 text-center max-w-[920px]">
+      <h1
+        class="hero-headline-figma mt-6 text-center max-w-[920px] hero-animate hero-delay-2"
+        :class="{ 'hero-visible': mounted }"
+      >
         Détectez les signaux qui impactent votre revenu avant qu'il ne soit trop tard
       </h1>
 
       <!-- 3. Subtitle -->
-      <p class="mt-6 text-base text-gray-500 text-center max-w-[640px]">
+      <p
+        class="mt-6 text-base text-gray-500 text-center max-w-[640px] hero-animate hero-delay-3"
+        :class="{ 'hero-visible': mounted }"
+      >
         Klyre surveille l'ensemble de votre acquisition et détecte les pertes de valeur avant qu'elles n'impactent votre pipeline et votre revenu.
       </p>
 
       <!-- 4. CTA Buttons -->
-      <div class="mt-8 flex items-center gap-3 flex-wrap justify-center">
-        <button class="cta-base cta-primary">
+      <div
+        class="mt-8 flex items-center gap-3 flex-wrap justify-center hero-animate hero-delay-4"
+        :class="{ 'hero-visible': mounted }"
+      >
+        <button class="cta-base cta-primary cta-glow">
           Inscrivez-vous sur la liste d'attente
         </button>
         <button class="cta-base cta-secondary cta-secondary-muted">
@@ -41,18 +53,24 @@
       </div>
 
       <!-- 5. Sub-text -->
-      <p class="mt-4 text-sm text-gray-400 text-center">
+      <p
+        class="mt-4 text-sm text-gray-400 text-center hero-animate hero-delay-5"
+        :class="{ 'hero-visible': mounted }"
+      >
         Connectez vos données et obtenez une première analyse en quelques minutes, sans configuration complexe.
       </p>
 
       <!-- 6. App Preview -->
-      <div class="mt-10 w-full max-w-[1000px] relative hidden md:block">
+      <div
+        class="mt-10 w-full max-w-[1000px] relative hidden md:block hero-animate hero-delay-6"
+        :class="{ 'hero-visible': mounted }"
+      >
         <!-- Orange gradient glow behind preview -->
         <div class="absolute inset-x-0 -top-8 h-[120px] bg-primary-400/20 blur-3xl rounded-full pointer-events-none"></div>
 
         <!-- Browser window mockup -->
-        <div class="relative rounded-[16px] p-1 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.03),0px_24px_68px_0px_rgba(0,0,0,0.12),0px_8px_20px_0px_rgba(0,0,0,0.06)]">
-          <div class="bg-white rounded-[13px] overflow-hidden">
+        <div class="mockup-border relative rounded-[16px] p-[2px] shadow-[0px_0px_0px_1px_rgba(0,0,0,0.03),0px_24px_68px_0px_rgba(0,0,0,0.12),0px_8px_20px_0px_rgba(0,0,0,0.06)]">
+          <div class="bg-white rounded-[14px] overflow-hidden relative z-10">
 
             <!-- Browser chrome -->
             <div class="bg-[#fafafa] border-b border-[#e6e6e6] flex items-center gap-2 px-4 py-3">
@@ -178,6 +196,17 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const mounted = ref(false)
+
+onMounted(() => {
+  // Small delay to ensure DOM is painted before triggering animation
+  requestAnimationFrame(() => {
+    mounted.value = true
+  })
+})
+
 const kpis = [
   { label: 'Leads', value: '1.274', change: '+ 12%' },
   { label: 'MQLs', value: '834', change: '+ 8%' },
@@ -188,3 +217,83 @@ const kpis = [
 
 const badges = ['66.9%', '41.2%', '23.2%', '8.4%']
 </script>
+
+<style scoped>
+/* --- Slide-down entrance --- */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-animate.hero-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-delay-1 { transition-delay: 0ms; }
+.hero-delay-2 { transition-delay: 100ms; }
+.hero-delay-3 { transition-delay: 200ms; }
+.hero-delay-4 { transition-delay: 300ms; }
+.hero-delay-5 { transition-delay: 400ms; }
+.hero-delay-6 { transition-delay: 500ms; }
+
+/* --- CTA glow pulse --- */
+.cta-glow {
+  position: relative;
+}
+
+.cta-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, #ef903c 0%, #f9bc6a 100%);
+  opacity: 0;
+  filter: blur(16px);
+  z-index: -1;
+  animation: glow-pulse 2.5s ease-in-out 1s infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.05); }
+}
+
+/* --- Rotating gradient border on mockup --- */
+.mockup-border {
+  background: #e6e6e6; /* fallback border color */
+  overflow: hidden;
+}
+
+.mockup-border::before {
+  content: '';
+  position: absolute;
+  /* Square element centered, sized to the diagonal so it covers all sides evenly */
+  width: 150%;
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 44%,
+    rgba(255, 140, 0, 0.15) 46%,
+    #ff8c00 49%,
+    #ffab40 50%,
+    #ff8c00 51%,
+    rgba(255, 140, 0, 0.15) 54%,
+    transparent 56%,
+    transparent 100%
+  );
+  animation: border-spin 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes border-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
