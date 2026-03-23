@@ -44,7 +44,7 @@
         class="mt-8 flex items-center gap-3 flex-wrap justify-center hero-animate hero-delay-4"
         :class="{ 'hero-visible': mounted }"
       >
-        <button class="cta-base cta-primary cta-glow">
+        <button class="cta-base cta-primary cta-glow" @click="openWaitlist">
           Inscrivez-vous sur la liste d'attente
         </button>
         <button class="cta-base cta-secondary cta-secondary-muted">
@@ -198,6 +198,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
+const { open: openWaitlist } = useWaitlistModal()
 const mounted = ref(false)
 
 onMounted(() => {

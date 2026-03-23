@@ -12,6 +12,7 @@
     <div class="scroll-reveal"><DetailedFeatures /></div>
     <div class="scroll-reveal"><CtaSection /></div>
     <FooterSection />
+    <WaitlistModal />
   </div>
 </template>
 

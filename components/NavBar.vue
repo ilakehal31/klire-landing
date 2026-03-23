@@ -29,12 +29,12 @@
         >
           Connexion
         </a>
-        <a
-          href="/signup"
+        <button
           class="cta-base cta-primary cta-nav"
+          @click="openWaitlist"
         >
           Inscrivez-vous sur la liste d'attente
-        </a>
+        </button>
       </div>
 
       <!-- Mobile: hamburger button -->
@@ -70,12 +70,12 @@
         >
           Connexion
         </a>
-        <a
-          href="/signup"
-          class="cta-base cta-primary text-center"
+        <button
+          class="cta-base cta-primary text-center w-full"
+          @click="openWaitlist(); mobileOpen = false"
         >
           Inscrivez-vous sur la liste d'attente
-        </a>
+        </button>
       </div>
     </div>
   </header>
@@ -84,6 +84,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
+const { open: openWaitlist } = useWaitlistModal()
 const mounted = ref(false)
 const mobileOpen = ref(false)
 

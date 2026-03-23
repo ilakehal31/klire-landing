@@ -17,7 +17,7 @@
         Première analyse disponible en moins de 10 minutes, sans configuration complexe.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center">
-        <button class="cta-base cta-primary">
+        <button class="cta-base cta-primary" @click="openWaitlist">
           Rejoindre la liste d'attente
         </button>
         <button class="cta-base cta-secondary">
@@ -28,3 +28,7 @@
 
   </section>
 </template>
+
+<script setup lang="ts">
+const { open: openWaitlist } = useWaitlistModal()
+</script>
