@@ -1,6 +1,39 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/* Force Nuxt UI neutral to pure gray (no blue tint) */
+:root {
+  --ui-color-neutral-50: #fafafa;
+  --ui-color-neutral-100: #f5f5f5;
+  --ui-color-neutral-200: #e5e5e5;
+  --ui-color-neutral-300: #d4d4d4;
+  --ui-color-neutral-400: #a3a3a3;
+  --ui-color-neutral-500: #737373;
+  --ui-color-neutral-600: #525252;
+  --ui-color-neutral-700: #404040;
+  --ui-color-neutral-800: #262626;
+  --ui-color-neutral-900: #171717;
+  --ui-color-neutral-950: #0a0a0a;
+
+  --ui-bg: white;
+  --ui-bg-muted: #fafafa;
+  --ui-bg-elevated: #f5f5f5;
+  --ui-bg-inverted: #171717;
+
+  --ui-border: #e5e5e5;
+  --ui-border-muted: #e5e5e5;
+  --ui-border-accented: #d4d4d4;
+  --ui-border-inverted: #171717;
+
+  --ui-text-dimmed: #a3a3a3;
+  --ui-text-muted: #737373;
+  --ui-text-toned: #525252;
+  --ui-text: #404040;
+  --ui-text-highlighted: #171717;
+
+  --ui-primary: var(--color-figma-orange);
+}
+
 @theme {
   --font-archivo: "Archivo", sans-serif;
 

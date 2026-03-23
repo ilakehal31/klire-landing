@@ -3,11 +3,11 @@
     <NavBar />
     <HeroSection />
     <div class="scroll-reveal"><StatsCards /></div>
-    <div class="scroll-reveal"><ProblemSection /></div>
-    <div class="scroll-reveal"><HowItWorks /></div>
-    <div class="scroll-reveal"><FunnelSection /></div>
+    <div id="cas-usage" class="scroll-reveal"><ProblemSection /></div>
+    <div id="comment-ca-marche" class="scroll-reveal"><HowItWorks /></div>
+    <div id="revenue-signals" class="scroll-reveal"><FunnelSection /></div>
     <div class="scroll-reveal"><PersonasSection /></div>
-    <div class="scroll-reveal"><FeaturesGrid /></div>
+    <div id="fonctionnalites" class="scroll-reveal"><FeaturesGrid /></div>
     <div class="scroll-reveal"><WhyKlyre /></div>
     <div class="scroll-reveal"><DetailedFeatures /></div>
     <div class="scroll-reveal"><CtaSection /></div>

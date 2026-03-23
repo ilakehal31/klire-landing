@@ -81,9 +81,9 @@
           <NuxtLink to="/legal/cgu" class="text-[12px] text-[#a5a5a5] leading-[19.2px] hover:text-[#575757] transition-colors">
             CGV
           </NuxtLink>
-          <a href="#" class="text-[12px] text-[#a5a5a5] leading-[19.2px] hover:text-[#575757] transition-colors">
+          <NuxtLink to="/legal/privacy#cookies" class="text-[12px] text-[#a5a5a5] leading-[19.2px] hover:text-[#575757] transition-colors">
             Cookies
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>

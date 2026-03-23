@@ -1,7 +1,9 @@
 <template>
-  <div class="font-archivo antialiased">
-    <NuxtPage />
-  </div>
+  <UApp>
+    <div class="font-archivo antialiased">
+      <NuxtPage />
+    </div>
+  </UApp>
 </template>
 
 <style>
