@@ -1,6 +1,20 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
   ssr: true,
+  routeRules: {
+    '/login': {
+      redirect: {
+        to: 'https://app.klyre.io/auth/sign-in',
+        statusCode: 301
+      }
+    },
+    '/login/': {
+      redirect: {
+        to: 'https://app.klyre.io/auth/sign-in',
+        statusCode: 301
+      }
+    }
+  },
   modules: ['@nuxt/ui'],
   colorMode: {
     preference: 'light',

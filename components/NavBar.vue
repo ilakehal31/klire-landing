@@ -24,7 +24,7 @@
       <!-- Right: Auth (desktop) -->
       <div class="hidden md:flex items-center gap-4">
         <a
-          href="/login"
+          href="https://app.klyre.io/auth/sign-in"
           class="font-archivo font-medium text-sm text-[#0a0a0a] underline leading-[22.4px]"
         >
           Connexion
@@ -65,7 +65,7 @@
       </ul>
       <div class="mt-6 flex flex-col gap-3">
         <a
-          href="/login"
+          href="https://app.klyre.io/auth/sign-in"
           class="font-archivo font-medium text-sm text-[#0a0a0a] underline text-center"
         >
           Connexion
